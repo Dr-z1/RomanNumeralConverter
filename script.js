@@ -1,86 +1,137 @@
-const numberInput = document.getElementById("number-input");
-const convertBtn = document.getElementById("convert-btn");
-const result = document.getElementById("result");
-const animationContainer = document.getElementById("animation-container");
-const animationData = [
-  {
-    inputVal: 5,
-    addElDelay: 1000,
-    msg: 'decimalToBinary(5) returns "10" + 1 (5 % 2). Then it pops off the stack.',
-    showMsgDelay: 15000,
-    removeElDelay: 20000,
-  },
-  {
-    inputVal: 2,
-    addElDelay: 1500,
-    msg: 'decimalToBinary(2) returns "1" + 0 (2 % 2) and gives that value to the stack below. Then it pops off the stack.',
-    showMsgDelay: 10000,
-    removeElDelay: 15000,
-  },
-  {
-    inputVal: 1,
-    addElDelay: 2000,
-    msg: "decimalToBinary(1) returns '1' (base case) and gives that value to the stack below. Then it pops off the stack.",
-    showMsgDelay: 5000,
-    removeElDelay: 10000,
-  }
-];
+/*const romanNumbers = [
+ 
+    ["M",1000],
+    ["CM",900],
+    ["D",500],
+    ["CD",400],
+    ["C",100],
+    ["XC",90],
+    ["L",50],
+    ["XL",40],
+    ["X",10],
+    ["IX",9],
+    ["V",5],
+    ["IV",4],
+    ["I",1]
+      
+      
+      
+      
+    ];
+    
+    let input = document.getElementById("number");
+    let output = document.getElementById("output");
+    let convert = document.getElementById("convert-btn");
+    
+    input.addEventListener("keydown", e => {
+    if(e.key === "Enter"){
+      convert.click()
+    }
+    }) 
+    convert.addEventListener("click",() => {
+    let value = input.value;
+    if(!value){
+    output.innerText="Please enter a valid number"
+    }else if(value<0){
+      output.innerText="Please enter a number greater than or equal to 1"
+    }else if(value>3999){
+      output.innerText="Please enter a number less than or equal to 3999"
+    }else{
+      let result="";
+      for(const [roman,number]of romanNumbers){
+        while (number < value){
+          result+=roman;
+          value -= number;
+        }
+       
+      }
+       output.innerText= result;
+    }
+    })*/
 
-const decimalToBinary = (input) => {
-  if (input === 0 || input === 1) {
-    return String(input);
-  } else {
-    return decimalToBinary(Math.floor(input / 2)) + (input % 2);
-  }
-};
 
-const showAnimation = () => {
-  result.innerText = "Call Stack Animation";
+    const form = document.getElementById('form');
+const convertButton = document.getElementById('convert-btn');
+const output = document.getElementById('output');
 
-  animationData.forEach((obj) => {
-    setTimeout(() => {
-      animationContainer.innerHTML += `
-        <p id="${obj.inputVal}" class="animation-frame">
-          decimalToBinary(${obj.inputVal})
-        </p>
-      `;
-    }, obj.addElDelay);
+const convertToRoman = num => {
+  const ref = [
+    ['M', 1000],
+    ['CM', 900],
+    ['D', 500],
+    ['CD', 400],
+    ['C', 100],
+    ['XC', 90],
+    ['L', 50],
+    ['XL', 40],
+    ['X', 10],
+    ['IX', 9],
+    ['V', 5],
+    ['IV', 4],
+    ['I', 1]
+  ];
+  const res = [];
 
-    setTimeout(() => {
-      document.getElementById(obj.inputVal).textContent = obj.msg;
-    }, obj.showMsgDelay);
-
-    setTimeout(() => {
-      document.getElementById(obj.inputVal).remove();
-    }, obj.removeElDelay);
+  ref.forEach(function (arr) {
+    while (num >= arr[1]) {
+      res.push(arr[0]);
+      num -= arr[1];
+    }
   });
 
-  setTimeout(() => {
-result.textContent=decimalToBinary(5)
-  }, 20000);
+  return res.join('');
 };
 
-const checkUserInput = () => {
-  const inputInt = parseInt(numberInput.value);
+const isValid = (str, int) => {
+  let errText = '';
 
-  if (!numberInput.value || isNaN(inputInt) || inputInt < 0) {
-    alert("Please provide a decimal number greater than or equal to 0");
-    return;
+  if (!str || str.match(/[e.]/g)) {
+    errText = 'Please enter a valid number.';
+  } else if (int < 1) {
+    errText = 'Please enter a number greater than or equal to 1.';
+  } else if (int > 3999) {
+    errText = 'Please enter a number less than or equal to 3999.';
+  } else {
+    // No errors detected
+    return true;
   }
 
-  if (inputInt === 5) {
-    showAnimation();
-    return;
-  }
+  // Handle error text and output styling
+  output.innerText = errText;
+  output.classList.add('alert');
 
-  result.textContent = decimalToBinary(inputInt);
-  numberInput.value = "";
+  return false;
 };
 
-convertBtn.addEventListener("click", checkUserInput);
+const clearOutput = () => {
+  output.innerText = '';
+  output.classList.remove('alert');
+};
 
-numberInput.addEventListener("keydown", (e) => {
-  if (e.key === "Enter") {
-    checkUserInput();
-  }
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  updateUI();
 });
+
+convertButton.addEventListener('click', () => {
+  updateUI();
+});
+
+const updateUI = () => {
+  const numStr = document.getElementById('number').value;
+  const int = parseInt(numStr, 10);
+
+  output.classList.remove('hidden');
+
+  clearOutput();
+
+  if (isValid(numStr, int)) {
+    output.innerText = convertToRoman(int);
+  }
+};
+
+    
+    
+    
+    
+    
