@@ -22,7 +22,7 @@
 
 ## **Purpose**
 
-This Is One of The requier projects to claim your certifications.
+This Is One of The Requier Projects To Claim Your Certifications.
 
 For This Project, You Will Build An Application That Converts Integers To Roman Numerals.
 
