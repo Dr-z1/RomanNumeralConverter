@@ -1,46 +1,54 @@
-# RomanNumeralConverter
+# **Roman Numeral Converter Project**
+
+## **Project Overview**
 
 
-Building Roman Numeral Converter
+#### This Project Is A **Roman Numeral Converter**, Developed As Part of The FreeCodeCamp Curriculum. 
+
+#### The Primary Goal Is  An Application That Converts Integers To Roman Numerals.
 
 
-This Website Was Built Using Free Code Camp Instructions: Learn How to Build Roman Numeral Converter
+## **Course Details**
 
 
-Section: JavaScript Algorithms and Data Structures (Beta)
++ **Course Section**: JavaScript Algorithms and Data Structures (Beta).
+  
++ **Project Name**: Roman Numeral Converter.
+  
++ This Site Was Built Using **[Free Code Camp](https://www.freecodecamp.org/).**
+  
++ This Project Is One of The **Required Tasks** To Earn The Certification In JavaScript Algorithms and Data Structures.
+  
+
+## **Purpose**
+
+This Is One of The requier projects to claim your certifications.
+
+For This Project, You Will Build An Application That Converts Integers To Roman Numerals.
 
 
-Course Name: Learn How to Build Roman Numeral Converter
+## **Acknowledgment**
 
 
-Deatils:
+This Project Was Created Following The Instructions Provided By **FreeCodeCamp**.
 
+All Rights To This Project And Its Related Materials Belong To **FreeCodeCamp**, A Free Educational Platform Offering Structured Courses And Hands-On Projects.
 
-This is one of the reqired projects to claim Your Certification.
+I Am Showcasing This Project As Part Of My Learning Journey, Completed Based On **FreeCodeCamp's Resources And Guidance.**
 
+A Big Thank You To **FreeCodeCamp** For Their Well-Structured Curriculum, Projects, And Partially Provided Code Snippets That Made This Project Possible.
 
-For This Project , You Will Build An Application That Converts Integers to Roman Numerals.
+## **Special Thanks**
 
+I Would Also Like To Extend **My Gratitude** To The Following Channels For Their Guidance In Writing The Code:
 
-Link:
+**[@codeManS](https://www.youtube.com/@codeManS)**
 
+**[@landonschlangen](https://www.youtube.com/@landonschlangen)**
 
-https://www.freecodecamp.org/
-
-
-
-
-
-
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+These Resources Provided Valuable Insights And Helped Me Refine My Coding Skills.
 
 
 
-This WebSite or Project Was Built Using The Instructions of The Free Code Camp  WebSite.
 
-Therefore, All Rights In This WebSite or Project Belong To The Free Code Camp Site, A Free Educational Site That Contains Many Projects.
-
-I Am Only Reviewing The Project After Building It From Their Site, So The Project Does Not Belong To Me.
-
-I Would Like To thank The Educational Website Free Code Camp For Teaching Me By Providing Projects , Instructions , And Part of The Codes
 
